@@ -1,0 +1,30 @@
+def findLCA(root, n1, n2):
+    if root is None:
+        return None
+        
+    if n1 < root.val and n2 < root.val:
+        return findLCA(root.left, n1, n2)
+    elif n1 > root.val and n2 > root.val:
+        return findLCA(root.right, n1, n2)
+    else:
+        return root
+    
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+    
+# Create a sample BST
+root = TreeNode(20)
+root.left = TreeNode(8)
+root.right = TreeNode(22)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(12)
+    
+# Call the function
+result = findLCA(root, 1000, 2000)
+print(f"LCA of 4 and 12: {result.val}")
+    
+result = findLCA(root, 4, 21)
+print(f"LCA of 4 and 22: {result.val}")
