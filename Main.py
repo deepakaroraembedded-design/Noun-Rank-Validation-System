@@ -189,7 +189,7 @@ def summarize_nltk(text, num_sentences=10):
 # Usage
 #text = """Your long document text here..."""
 summary = summarize_nltk(text, num_sentences=3)
-#rint(summary)
+print(summary)
 results = extract_nouns(summary)
 #sleep(15)  
 print_results(results)
